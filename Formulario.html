@@ -43,7 +43,7 @@
               <a class="nav-link" href="">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Formulario.html">Formulario</a>
+              <a class="nav-link" href="Registro.html">Registro</a>
             </li>
 
             <li class="Categorias">
@@ -59,48 +59,47 @@
       </nav>
       
 
-    <!--Inicio Carrusel -->   
-    <br>
-    <div class="container">
-      <div id="demo" class="carousel slide" data-ride="carousel" >
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="Img/EstBasquet.JPG" class="d-block w-100" alt="..." width="400" height="500">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Basquet</h5>
-              <p>INGRESA TEXTO SOBRE LA PROMCION</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Img/EstFutbol.jpg" class="d-block w-100" alt="..." width="400" height="500" >
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Futbol</h5>
-              <p>INGRESA TEXTO SOBRE PROMOCION 2</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="Img/EstTennis.JPG" class="d-block w-100" alt="..." width="400" height="500">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>tennis</h5>
-              <p>INGRESA TEXTO SOBRE PROMOCION 3</p>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev" style="background-color: rgba(0, 0, 0, 0.233);">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next" style="background-color: rgba(0, 0, 0, 0.233);">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-      </div>
-      </div>
+    <!-- Inicio Formulario -->
 
-    <!-- Fin Carrusel -->
+    <form method="post" action="procesar.php">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electronico</label>
+            <input type="text" class="form-control" id="email" name="email">
+
+        </div>
+
+        <div class="form-group">
+            <label for="rut">RUT</label>
+            <input type="text" class="form-control" id="rut" name="rut">
+
+        </div>
+
+        <div class="form-group">
+            <label for="pass">Contraseña</label>
+            <input type="password" class="form-control" id="pass" name="pass">
+
+            <label for="pass2">Repite contraseña</label>
+            <input type="password" class="form-control" id="pass2" name="pass2">
+
+        </div>
+        
+        <div class="form-group">
+             Comentario <br>
+            <label for="txt"></label>
+            <textarea name="txt" id="txt" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+        <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+
+
+    </form>
 
 
     <!-- Optional Javacript; choose one of the two! -->
@@ -122,6 +121,26 @@
         });
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#enviar").click(function(){
+               var ctrs1 = ($("#pass").val());
+               var ctrs2 = ($("#pass2").val());
+               var rut   = ($("#rut").val)
+
+
+
+               if(ctrs1 != ctrs2){
+                    alert("Contraseñas no coinciden"); 
+                    event.preventDefault(); } 
+
+
+
+           }); 
+        });
+
+
+    </script>
     
   </body>
 </html>
